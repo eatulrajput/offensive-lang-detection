@@ -1,1 +1,1 @@
-# offensive-lang-detection
+# offensive-lang-detection: HarmonyBot
