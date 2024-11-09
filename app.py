@@ -8,6 +8,9 @@ import os
 # Load environment variables from the .env file
 load_dotenv()
 
+# Load the Perspective API key from Streamlit secrets
+api_key = st.secrets["PERSPECTIVE_API_KEY"]
+
 # Get the Perspective API key from environment variable
 api_key = os.getenv('PERSPECTIVE_API_KEY')
 
