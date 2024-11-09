@@ -4,6 +4,7 @@ import pickle
 import requests
 from dotenv import load_dotenv
 import os
+import subprocess
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -13,6 +14,21 @@ api_key = st.secrets["PERSPECTIVE_API_KEY"]
 
 # Get the Perspective API key from environment variable
 api_key = os.getenv('PERSPECTIVE_API_KEY')
+
+# Load GitHub credentials from secrets
+github_username = st.secrets["GITHUB_USERNAME"]
+github_token = st.secrets["GITHUB_TOKEN"]
+
+# Update repository URL with username and token
+repo_url = f"https://{github_username}:{github_token}@github.com/your-username/your-repo-name.git"
+
+# Pull changes using subprocess with credentials
+try:
+    subprocess.run(["git", "pull", repo_url], check=True)
+    st.success("App updated successfully from GitHub!")
+except subprocess.CalledProcessError:
+    st.error("Failed to update app files from GitHub.")
+
 
 # Load the trained model
 with open("model.pkl", "rb") as f:
