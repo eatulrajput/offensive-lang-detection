@@ -5,4 +5,6 @@ pandas
 numpy
 textblob
 requests
+python-dotenv
+
 
