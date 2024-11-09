@@ -6,6 +6,12 @@ from dotenv import load_dotenv
 import os
 import subprocess
 
+import streamlit as st
+
+# Set the page title and icon (optional)
+st.set_page_config(page_title="HarmonBot", page_icon="HarmonyBot.png")
+
+
 # Load environment variables from the .env file
 load_dotenv()
 
@@ -22,12 +28,14 @@ github_token = st.secrets["GITHUB_TOKEN"]
 # Update repository URL with username and token
 repo_url = f"https://{github_username}:{github_token}@github.com/eatulrajput/offensive-lang-detection.git"
 
-# Pull changes using subprocess with credentials
-try:
-    subprocess.run(["git", "pull", repo_url], check=True)
-    st.success("App updated successfully from GitHub!")
-except subprocess.CalledProcessError:
-    st.error("Failed to update app files from GitHub.")
+# # Pull changes using subprocess with credentials
+# try:
+#     subprocess.run(["git", "pull", repo_url], check=True)
+#     st.success("App updated successfully from GitHub!")
+# except subprocess.CalledProcessError:
+#     st.error("Failed to update app files from GitHub.")
+
+
 
 
 # Load the trained model
@@ -109,7 +117,17 @@ def detect_and_suggest_with_sentiment(text, api_key):
         return "non-offensive", None, None, toxicity_percentage
 
 # Streamlit UI
-st.title("Offensive Language Detection and Suggestion Tool")
+# Create two columns
+col1, col2 = st.columns([1, 5])  # Adjust the ratio as needed
+
+with col1:
+    # Display the image in the first column
+    st.image("HarmonyBot.png", width=500)  # Adjust width as needed
+
+with col2:
+    # Display the title in the second column
+    st.title("HarmonyBot")
+st.write("An Offensive Language Detection and Suggestion Tool")
 st.write("Type a message to analyze for potential offensive content:")
 
 # User input
