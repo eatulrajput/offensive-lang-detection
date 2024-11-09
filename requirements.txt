@@ -3,6 +3,5 @@ scikit-learn
 textblob
 pandas
 numpy
-pickle5
 textblob
 
