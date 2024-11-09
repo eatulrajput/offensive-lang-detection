@@ -20,7 +20,7 @@ github_username = st.secrets["GITHUB_USERNAME"]
 github_token = st.secrets["GITHUB_TOKEN"]
 
 # Update repository URL with username and token
-repo_url = f"https://{github_username}:{github_token}@github.com/your-username/your-repo-name.git"
+repo_url = f"https://{github_username}:{github_token}@github.com/eatulrajput/offensive-lang-detection.git"
 
 # Pull changes using subprocess with credentials
 try:
