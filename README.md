@@ -1,7 +1,7 @@
 # HarmonyBot Project Documentation
 
 ## Project Overview
-[!Logo](https://github.com/eatulrajput/offensive-lang-detection/blob/main/HarmonyBot.png)
+![logo](https://github.com/eatulrajput/offensive-lang-detection/blob/main/HarmonyBot.png) <br>
 **HarmonyBot** is an AI-powered tool developed to detect and mitigate offensive language in real time, aiming to create safer online spaces, particularly for vulnerable groups such as women and girls. The bot leverages machine learning, sentiment analysis, and Google’s Perspective API to identify toxic language, assess its severity, and suggest positive alternatives, fostering a more respectful digital environment.
 
 ---
